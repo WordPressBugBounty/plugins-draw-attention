@@ -6,7 +6,7 @@
  * @author    Nathan Tyler <support@wpdrawattention.com>
  * @license   GPL-2.0+
  * @link      http://example.com
- * @copyright 2022 N Squared
+ * @copyright 2024 NSquared
  */
 
 /**
@@ -31,7 +31,7 @@ if ( ! class_exists( 'DrawAttention' ) ) {
 		 *
 		 * @var     string
 		 */
-		const VERSION = '2.0.28';
+		const VERSION = '2.0.29';
 		const file    = __FILE__;
 		const name    = 'Draw Attention';
 		const slug    = 'drawattention';
