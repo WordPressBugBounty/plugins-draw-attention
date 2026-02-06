@@ -31,7 +31,7 @@ if ( ! class_exists( 'DrawAttention' ) ) {
 		 *
 		 * @var     string
 		 */
-		const VERSION = '2.0.38';
+		const VERSION = '2.1.0';
 		const file    = __FILE__;
 		const name    = 'Draw Attention';
 		const slug    = 'drawattention';
@@ -111,6 +111,9 @@ if ( ! class_exists( 'DrawAttention' ) ) {
 			 *
 			 * Various functionality is separated into external files
 			 */
+
+			include_once __DIR__ . '/includes/bb/bb.php';
+
 			include_once __DIR__ . '/includes/cpt.php';
 			$this->cpt = new DrawAttention_CPT( $this );
 
