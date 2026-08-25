@@ -1,4 +1,8 @@
 <?php
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * Plugin Name.
  *
@@ -31,7 +35,7 @@ if ( ! class_exists( 'DrawAttention' ) ) {
 		 *
 		 * @var     string
 		 */
-		const VERSION = '2.1.6';
+		const VERSION = '2.1.8';
 		const file    = __FILE__;
 		const name    = 'Draw Attention';
 		const slug    = 'drawattention';
@@ -267,6 +271,7 @@ if ( ! class_exists( 'DrawAttention' ) ) {
 				WHERE archived = '0' AND spam = '0'
 				AND deleted = '0'";
 
+			// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- no user input; $wpdb->blogs is the core multisite table name.
 			return $wpdb->get_col( $sql );
 		}
 

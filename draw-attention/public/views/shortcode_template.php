@@ -1,4 +1,8 @@
 <?php
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 
 // No hotspots are defined
 $has_hotspots = false;
@@ -55,6 +59,13 @@ if ( empty( $settings['img_url'] ) ) : ?>
 
 	#<?php echo $settings['spot_id']; ?> .hotspot-title {
 		color: <?php echo $settings['more_info_title']; ?>;
+	}
+
+	/* Allow long heading words (e.g. long compound words) to wrap instead of being clipped by the info box */
+	#<?php echo $settings['spot_id']; ?> .hotspot-title,
+	.featherlight .featherlight-content.lightbox-<?php echo $settings['image_id']; ?> .hotspot-title {
+		overflow-wrap: break-word;
+		word-break: break-word;
 	}
 
 	<?php foreach ( $formatted_styles as $style ) : ?>
